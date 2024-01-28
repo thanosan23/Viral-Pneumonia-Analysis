@@ -11,9 +11,9 @@ device = torch.device('mps')
 test_image_num = 1
 
 model = smp.Unet(
-    encoder_name="resnet34", 
-    encoder_weights=None, 
-    in_channels=3,                  
+    encoder_name="resnet34",
+    encoder_weights=None,
+    in_channels=3,
     classes=1
 )
 
@@ -26,7 +26,7 @@ image = image.resize((256, 256))
 image = np.array(image)
 
 transform = A.Compose(
-    [A.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]), 
+    [A.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
      ToTensorV2()]
 )
 
